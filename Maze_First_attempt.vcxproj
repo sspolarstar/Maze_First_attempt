@@ -40,6 +40,9 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PrintText.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

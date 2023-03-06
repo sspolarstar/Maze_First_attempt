@@ -1,4 +1,9 @@
 ﻿  Main.cpp
+  MapCollider.cpp
   Player.cpp
+  PrintText.cpp
+  mazeBuilder.cpp
+C:\Users\scott\source\repos\Maze_First_attempt\Maze_First_attempt\mazeBuilder.cpp(60,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\scott\source\repos\Maze_First_attempt\Maze_First_attempt\mazeBuilder.cpp(60,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Generating Code...
   Maze_First_attempt.vcxproj -> C:\Users\scott\source\repos\Maze_First_attempt\Debug\Maze_First_attempt.exe

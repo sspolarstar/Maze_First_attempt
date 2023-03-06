@@ -8,6 +8,7 @@
 #include "Player.hpp"
 #include "mazeBuilder.hpp" 
 #include "Global.hpp"
+#include "PrintText.hpp"
 
 int main()
 {
@@ -63,6 +64,7 @@ int main()
         window.clear();
         DrawMap(window, map);
         player.Draw(window);
+        draw_text(0, 0, CELL_SIZE * MAP_HEIGHT, "Level: " + std::to_string(3), window);
         window.display();
     }
 
