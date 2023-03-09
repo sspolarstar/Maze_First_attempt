@@ -38,23 +38,29 @@ void Player::Update(float deltaTime, std::array<std::array< Cell, MAP_HEIGHT>, M
 	movement.y = 0;
 	
 	sf::Vector2u rowLocator;
-
+	
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
 	{
-		if (collision_direction.left) {
+		if (collision_direction.wall[LEFT]) {
 		
 		}
 		else {
 			movement.x -= speed * deltaTime;
+			if (collision_direction.boulder[LEFT]) {
+				movement.x = movement.x / 3;
+			}
 			rowLocator = walkRight; //actually left!
 		}
 	}
 	
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
 	{
-		if (collision_direction.right) {}
+		if (collision_direction.wall[RIGHT]) {}
 		else {
 			movement.x += speed * deltaTime;
+			if (collision_direction.boulder[RIGHT]) {
+				movement.x = movement.x / 3;
+			}
 			rowLocator = walkRight;
 		}		
 	}
@@ -64,30 +70,36 @@ void Player::Update(float deltaTime, std::array<std::array< Cell, MAP_HEIGHT>, M
 	}
 	else {
 		//let's rewrite this later. but I don't think we use this much.
-		if (movement.x > 0.0f)
-			facesRight = true;
-		else
-			facesRight = false;
+		facesRight = movement.x > 0.0f;
 	}
+
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
 	{
-		if (collision_direction.up) {}
+		if (collision_direction.wall[UP]) {}
 		else {
 			movement.y -= speed * deltaTime;
 			rowLocator = walkUp;
 		}
+		if (collision_direction.boulder[UP]) {
+			movement.y = movement.y / 3;
+		}
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
 	{
-		if (collision_direction.down) {}
+		if (collision_direction.wall[DOWN]) {
+		}
 		else {
 			movement.y += speed * deltaTime;
 			rowLocator = walkDown;
+		}
+		if (collision_direction.boulder[DOWN]) {
+			movement.y = movement.y / 3;
 		}
 	}
 	//end player movements
 	animation.Update(row, rowLocator, deltaTime, facesRight);
 	body.setTextureRect(animation.uvRect);
+	
 	move(movement.x, movement.y);
 }
 

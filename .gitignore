@@ -1,14 +1,3 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
-
-*
-!./*.cpp
-!./*.h
-!./img/*
-!./*.hpp
-Debug/Maze_First_attempt.log
-*.vcxproj
-Maze_First_attempt.vcxproj.filters
+Debug/*
+Maze_First_attempt.*
+.vscode/*

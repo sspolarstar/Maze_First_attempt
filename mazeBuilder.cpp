@@ -4,16 +4,17 @@
 
 void DrawMap(sf::RenderWindow& window, const std::array<std::array< Cell, MAP_HEIGHT>, MAP_WIDTH> MapSketch)
 {
-	sf::Sprite wallSprite, next_areaSprite;
-	sf::Texture wallTexture, next_areaTexture, texture;
+	sf::Sprite wallSprite, next_areaSprite, boulder_sprite;
+	sf::Texture wallTexture, next_areaTexture, boulder_texture;
 
 	wallTexture.loadFromFile("img/graySquare.png");
 	wallSprite.setTexture(wallTexture);
 
 	next_areaTexture.loadFromFile("img/next_area.png");
-
 	next_areaSprite.setTexture( next_areaTexture );
 
+	boulder_texture.loadFromFile("img/boulder.png");
+	boulder_sprite.setTexture(boulder_texture);
 
 	for (unsigned char a = 0; a < MAP_WIDTH; a++)
 	{
@@ -28,7 +29,9 @@ void DrawMap(sf::RenderWindow& window, const std::array<std::array< Cell, MAP_HE
 				window.draw(wallSprite);
 				break;
 			case Cell::Boulder:
-				//window.draw(sprite);
+				boulder_sprite.setPosition(static_cast<float>(CELL_SIZE * a), static_cast<float>(CELL_SIZE * b));
+				boulder_sprite.setTextureRect(sf::IntRect(0, 0, CELL_SIZE, CELL_SIZE));
+				window.draw(boulder_sprite);
 				break;
 			case Cell::Next_Area:
 				next_areaSprite.setPosition(static_cast<float>(CELL_SIZE * a), static_cast<float>(CELL_SIZE * b));

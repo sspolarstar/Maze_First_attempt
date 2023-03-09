@@ -9,6 +9,7 @@
 #include "mazeBuilder.hpp" 
 #include "Global.hpp"
 #include "PrintText.hpp"
+#include "boulder.hpp"
 
 int main()
 {
@@ -34,12 +35,12 @@ int main()
         "*  *       * ***   *    *      *",
         "*  *  *  * *  *                *",
         "*  *  ********************     *",
-        "****                *          *",
+        "****              b *          *",
         "*      *****        *   ********",
         "*   ****       *    *   *   *  *",
         "*   *    **** ***   *   *   *  *",
         "*   * *  *  * * *   *   *   *  *",
-        "*   * *     * *           p    *",
+        "*   * *     *b*           p    *",
         "********************************",
     };
     std::array<std::array<Cell, MAP_HEIGHT>, MAP_WIDTH> map{};
