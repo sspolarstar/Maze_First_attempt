@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <SFML/Graphics.hpp>
+
 constexpr unsigned char CELL_SIZE = 16;
 constexpr unsigned char MAP_HEIGHT = 18;
 constexpr unsigned char TEXT_HEIGHT = 16;

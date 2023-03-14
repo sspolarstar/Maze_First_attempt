@@ -9,7 +9,7 @@
 #include "mazeBuilder.hpp" 
 #include "Global.hpp"
 #include "PrintText.hpp"
-#include "boulder.hpp"
+#include "Boulder.hpp"
 
 int main()
 {
@@ -50,7 +50,7 @@ int main()
 
     map = convertSketch(mapSketch, player);
 
-    window.setView(sf::View(sf::FloatRect(0, 0, CELL_SIZE * MAP_WIDTH, TEXT_HEIGHT + CELL_SIZE * MAP_HEIGHT)));
+    window.setView(sf::View(sf::FloatRect(0, 0, CELL_SIZE * MAP_WIDTH, TEXT_HEIGHT+TEXT_HEIGHT + CELL_SIZE * MAP_HEIGHT)));
     while (window.isOpen())
     {
         deltaTime = clock.restart().asSeconds();
@@ -65,7 +65,7 @@ int main()
         window.clear();
         DrawMap(window, map);
         player.Draw(window);
-        draw_text(0, 0, CELL_SIZE * MAP_HEIGHT, "Level: " + std::to_string(3), window);
+        draw_text(0, 0, CELL_SIZE * MAP_HEIGHT, "as;ldkfj;akejf;oasjdf;lkj: \n"  + std::to_string(3), window);
         window.display();
     }
 
